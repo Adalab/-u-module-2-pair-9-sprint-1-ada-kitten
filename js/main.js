@@ -1,4 +1,5 @@
 'use strict';
+
 const listElement = document.querySelector ('.js-list');
 
 const kittenOne = ` <li class="card">
@@ -18,8 +19,6 @@ const kittenOne = ` <li class="card">
 </article>
 </li>`; 
 
-document.querySelector ('.js-list').innerHTML = kittenOne;
-
 
 const kittenTwo = `<li class="card">
 <img
@@ -37,8 +36,7 @@ const kittenTwo = `<li class="card">
 </li>`;
 
 
-
-const kittenThree = <li class="card">
+const kittenThree = `<li class="card">
 <img
   class="card_img"
   src="https://dev.adalab.es/maine-coon-cat.webp"
@@ -51,8 +49,8 @@ const kittenThree = <li class="card">
   bella mirada se ha convertido en una de sus señas de identidad.
   Sus ojos son grandes y las orejas resultan largas y en punta.
 </p>
-</li>;
+</li>`;
 
 
 
-
+listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
