@@ -84,3 +84,39 @@ if( !kittenDescOne.includes(descrSearchText) ) {
   
   listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
+
+  //Eventos en Pair
+
+const btnPlus = document.querySelector('.js-plus');
+const btnAdd = document.querySelector('.js-btn-add');
+const btnMenu = document.querySelector('.js-new-menu');
+
+btnPlus.addEventListener('click',(event) =>{
+  event.preventDefault();
+  btnMenu.classList.toggle('collapsed');
+});
+
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+const btnCancel = document.querySelector ('.js-btn-cancel');
+
+btnAdd.addEventListener('click', (event) =>{
+  const valueDesc = inputDesc.value;
+  const valuePhoto = inputPhoto.value;
+  const valueName = inputName.value;
+  if (valueDesc ==='' || valuePhoto ===''|| valueName ===''){
+    labelMessageError.innerHTML = ('¡Ay!, parece que te has olvidado algo');
+  }
+});
+btnCancel.addEventListener('click', (event) =>{
+    event.preventDefault();
+    inputDesc.value= '';
+    inputPhoto.value= '';
+    inputName.value= '';
+    btnMenu.classList.toggle('collapsed');
+});
+
+
+
