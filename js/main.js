@@ -85,7 +85,7 @@ if( !kittenDescOne.includes(descrSearchText) ) {
   listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 
-  //Eventos en Pair
+  ////////////////////Eventos en Pair
 
 const btnPlus = document.querySelector('.js-plus');
 const btnAdd = document.querySelector('.js-btn-add');
@@ -119,4 +119,26 @@ btnCancel.addEventListener('click', (event) =>{
 });
 
 
+////////////////funciones 
 
+
+const buttonSearch = document.querySelector ('.js-button-search');
+
+// const input_search_desc = document.querySelector ('.js_in_search_desc');
+
+// const descrSearchText = input_search_desc.value;
+
+const filterKitten = (event) => {
+
+  if (kittenDescOne.includes (descrSearchText)) {
+    listElement.innerHTML += kittenOne;
+  }
+  if (kittenDescTwo.includes(descrSearchText)) {
+    listElement.innerHTML += kittenTwo;
+  }
+  if (kittenDescThree.includes(descrSearchText)) {
+    listElement.innerHTML += kittenThree;
+  }
+};
+
+buttonSearch.addEventListener ('click', filterKitten);
