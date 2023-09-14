@@ -146,6 +146,8 @@ const filterKitten = (event) => {
 
 buttonSearch.addEventListener ('click', filterKitten);
 
+/************Render**************/
+
 
 function renderKitten(url, desc, name, race) {
   return url + desc + name + race;
