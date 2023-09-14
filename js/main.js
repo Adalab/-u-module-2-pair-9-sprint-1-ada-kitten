@@ -85,7 +85,7 @@ if( !kittenDescOne.includes(descrSearchText) ) {
   listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 
-  ////////////////////Eventos en Pair
+ /***********Eventos***********/
 
 const btnPlus = document.querySelector('.js-plus');
 const btnAdd = document.querySelector('.js-btn-add');
@@ -119,7 +119,7 @@ btnCancel.addEventListener('click', (event) =>{
 });
 
 
-////////////////funciones 
+/**********funciones*************/
 
 
 const buttonSearch = document.querySelector ('.js-button-search');
@@ -129,6 +129,9 @@ const buttonSearch = document.querySelector ('.js-button-search');
 // const descrSearchText = input_search_desc.value;
 
 const filterKitten = (event) => {
+  event.preventDefault (); 
+    listElement.innerHTML = ''; 
+    const descrSearchText = input_search_desc.value;
 
   if (kittenDescOne.includes (descrSearchText)) {
     listElement.innerHTML += kittenOne;
@@ -142,3 +145,22 @@ const filterKitten = (event) => {
 };
 
 buttonSearch.addEventListener ('click', filterKitten);
+
+
+function renderKitten(url, desc, name, race) {
+  return url + desc + name + race;
+}
+
+const result = renderKitten(`${kittenImageOne} ${kittenDescOne} ${kittenNameOne} ${kittenRaceOne}`);
+
+console.log (result);
+
+
+/************Objetos**************/
+
+const kittenData1 = {
+  image: `${kittenImageOne}`,
+  name: 'Anastasio',
+  desc: ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
+  race: 'Siamés',
+};
