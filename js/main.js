@@ -160,9 +160,34 @@ console.log (result);
 
 /************Objetos**************/
 
-const kittenData1 = {
+const kittenData_1 = {
   image: `${kittenImageOne}`,
-  name: 'Anastasio',
-  desc: ' Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.',
-  race: 'Siamés',
+  name: `${kittenNameOne}`,
+  desc: `${kittenDescOne}`,
+  race:  `${kittenRaceOne}`,
 };
+
+const kittenData_2 =
+{
+  image: `${kittenImageTwo}`,
+  name: `${kittenNameTwo}`,
+  desc: `${kittenDescTwo}`,
+  race: `${kittenRaceTwo}`,
+
+};
+
+const kittenData_3 = 
+
+{
+  image: `${kittenImageThree}`,
+  name: `${kittenNameThree}`,
+  desc: `${kittenDescThree}`,
+  race: `${kittenRaceThree}`,
+ };
+
+/// Array ///
+
+const kittenDataList = [ kittenData_1, kittenData_2, kittenData_3];
+
+console.log(kittenDataList[2].name);
+
