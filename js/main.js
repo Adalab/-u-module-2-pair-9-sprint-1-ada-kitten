@@ -70,19 +70,19 @@ const input_search_desc = document.querySelector ('.js_in_search_desc');
 
 const descrSearchText = input_search_desc.value;
 
-if( !kittenDescOne.includes(descrSearchText) ) {
-  kittenOne.classList.add ('hidden');
-  }
+// if( !kittenDescOne.includes(descrSearchText) ) {
+//   kittenOne.classList.add ('hidden');
+//   }
   
-  if( !kittenDescTwo.includes(descrSearchText) ) {
-  kittenTwo.classList.add ('hidden');
-  }
+//   if( !kittenDescTwo.includes(descrSearchText) ) {
+//   kittenTwo.classList.add ('hidden');
+//   }
   
-  if( !kittenDescThree.includes(descrSearchText) ) {
-    kittenThree.classList.add ('hidden');
-  }
+//   if( !kittenDescThree.includes(descrSearchText) ) {
+//     kittenThree.classList.add ('hidden');
+//   }
   
-  listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
+  // listElement.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 
  /***********Eventos***********/
@@ -149,13 +149,22 @@ buttonSearch.addEventListener ('click', filterKitten);
 /************Render**************/
 
 
-function renderKitten(url, desc, name, race) {
-  return url + desc + name + race;
+function renderKitten(kitten) {
+  const liKitten =`<li class="card">
+  <img
+    class="card_img"
+    src="${kitten.image}"
+    alt="maine-coon-cat"
+  />
+  <h3 class="card_title">${kitten.name}</h3>
+  <h4 class="card_race">${kitten.race}</h4>
+  <p class="card_description">${kitten.desc}
+  </p>
+  </li>`;
+  
+  return liKitten
 }
 
-const result = renderKitten(`${kittenImageOne} ${kittenDescOne} ${kittenNameOne} ${kittenRaceOne}`);
-
-console.log (result);
 
 
 /************Objetos**************/
@@ -187,7 +196,19 @@ const kittenData_3 =
 
 /// Array ///
 
+// listElement.innerHTML = renderKitten(kittenData_1)+renderKitten(kittenData_2)+ renderKitten(kittenData_3)
+
 const kittenDataList = [ kittenData_1, kittenData_2, kittenData_3];
 
-console.log(kittenDataList[2].name);
+// console.log(kittenDataList[2].name);
+
+/*******************Bucles****************/
+
+function renderKittenList (kittenDataList){
+ listElement.innerHTML = "";
+ for (let i = 0; i <= kittenDataList.length; i++){
+  listElement.innerHTML += renderKitten(kittenDataList[i]);
+ }
+}
+renderKittenList(kittenDataList);
 
